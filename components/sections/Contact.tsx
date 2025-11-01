@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Contact: React.FC = () => {
-    const whatsappUrl = "https://wa.me/5571999999999?text=Olá!%20Gostaria%20de%20entrar%20em%20contato.";
+    const whatsappUrl = "https://wa.me/5575991973368?text=Olá!%20Gostaria%20de%20entrar%20em%20contato.";
 
   return (
     <section id="contato" className="py-20 bg-white">
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
           <div className="md:w-1/2 space-y-8">
              <div className="bg-stone-50 p-8 rounded-lg shadow-md">
                 <h3 className="text-2xl font-bold text-stone-800 mb-4">Contato Direto</h3>
-                <p className="text-stone-600 mb-2"><strong>Telefone:</strong> <a href="tel:+5571999999999" className="hover:text-amber-600">+55 (71) 99999-9999</a></p>
+                <p className="text-stone-600 mb-2"><strong>Telefone:</strong> <a href="tel:+5575991973368" className="hover:text-amber-600">+55 (75) 99197-3368</a></p>
                 <p className="text-stone-600 mb-6"><strong>E-mail:</strong> <a href="mailto:contato@encantosdepalmeiras.com.br" className="hover:text-amber-600">contato@encantosdepalmeiras.com.br</a></p>
                  <a 
                     href={whatsappUrl} 

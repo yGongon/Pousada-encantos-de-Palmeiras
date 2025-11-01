@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Home: React.FC = () => {
-  const whatsappUrl = "https://wa.me/5571999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva.";
+  const whatsappUrl = "https://wa.me/5575991973368?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva.";
 
   return (
     <section id="home" className="relative h-screen flex items-center justify-center text-white">

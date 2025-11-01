@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ activePage, navigateTo }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const whatsappUrl = "https://wa.me/5571999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva.";
+  const whatsappUrl = "https://wa.me/5575991973368?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva.";
 
   const handleNavClick = (page: Page) => {
     navigateTo(page);

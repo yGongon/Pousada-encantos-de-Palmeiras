@@ -2,7 +2,7 @@ import React from 'react';
 import { WhatsAppIcon } from './icons/Icons';
 
 const WhatsAppButton: React.FC = () => {
-  const whatsappUrl = "https://wa.me/5571999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20reservas.";
+  const whatsappUrl = "https://wa.me/5575991973368?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20as%20reservas.";
 
   return (
     <a
