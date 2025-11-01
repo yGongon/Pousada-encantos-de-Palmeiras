@@ -6,7 +6,7 @@ export interface Accommodation {
   fullDetails: string[];
   amenities: string[];
   images: string[];
-  price: string;
+  price: number;
   featured?: boolean;
 }
 
@@ -26,7 +26,7 @@ export const accommodations: Accommodation[] = [
         'https://picsum.photos/800/600?image=1079',
         'https://picsum.photos/800/600?image=1080'
     ],
-    price: '350,00',
+    price: 350,
     featured: true,
   },
   {
@@ -44,7 +44,7 @@ export const accommodations: Accommodation[] = [
         'https://picsum.photos/800/600?image=660',
         'https://picsum.photos/800/600?image=661'
     ],
-    price: '420,00',
+    price: 420,
     featured: true,
   },
   {
@@ -62,7 +62,7 @@ export const accommodations: Accommodation[] = [
         'https://picsum.photos/800/600?image=21',
         'https://picsum.photos/800/600?image=22'
     ],
-    price: '280,00',
+    price: 280,
   },
    {
     name: 'Bangalô Orquídea',
@@ -79,6 +79,6 @@ export const accommodations: Accommodation[] = [
         'https://picsum.photos/800/600?image=836',
         'https://picsum.photos/800/600?image=837'
     ],
-    price: '550,00',
+    price: 550,
   },
 ];

@@ -22,7 +22,7 @@ const AccommodationCard: React.FC<{ accommodation: Accommodation; onDetailsClick
         <div className="border-t border-stone-200 pt-4 mt-auto">
           <div className="flex justify-between items-center mb-4">
              <p className="text-stone-500 text-sm">A partir de</p>
-             <p><span className="text-3xl font-bold text-emerald-600">R${accommodation.price}</span><span className="text-stone-500">/noite</span></p>
+             <p><span className="text-3xl font-bold text-emerald-600">R${accommodation.price.toFixed(2).replace('.', ',')}</span><span className="text-stone-500">/noite</span></p>
           </div>
           <button onClick={() => onDetailsClick(accommodation.slug)} className="inline-block w-full text-center bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-amber-600 transition-colors duration-300">
             Ver detalhes
