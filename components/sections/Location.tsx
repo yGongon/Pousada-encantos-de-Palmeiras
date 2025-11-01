@@ -11,8 +11,16 @@ const Location: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-2/3">
             <div className="aspect-w-16 aspect-h-9 rounded-lg shadow-xl overflow-hidden">
+              {/* 
+                INSTRUÇÕES PARA ATUALIZAR O MAPA:
+                1. Acesse o Google Maps e pesquise o endereço exato da sua pousada.
+                2. Clique em "Compartilhar" e depois na aba "Incorporar um mapa".
+                3. Copie o código HTML.
+                4. Substitua o link abaixo (que está dentro do atributo src="...") pelo link que você copiou.
+                O link atual é apenas um exemplo de um local no centro de Palmeiras.
+              */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15607.756247957648!2d-41.57723861215036!3d-12.52980187848698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x76b0f19c0b1574d%3A0x868a8f609b552303!2sPalmeiras%2C%20BA%2C%2046930-000!5e0!3m2!1spt-BR!2sbr!4v1678886400000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3895.016177112917!2d-41.57668142493134!3d-12.515086587759903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x769e1a49c04869d%3A0x51644425f0e576de!2sPousada%20Encantos%20de%20Palmeiras!5e0!3m2!1spt-BR!2sbr!4v1762002628818!5m2!1spt-BR!2sb"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
