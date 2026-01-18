@@ -101,10 +101,11 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ accommodation
             </button>
         </div>
 
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-stone-800" style={{ fontFamily: 'Montserrat' }}>
                 {accommodation.name}
             </h1>
+            <div className="w-20 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
         </div>
         
         <div className="flex flex-col lg:flex-row gap-12">
@@ -161,7 +162,17 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ accommodation
             <div className="bg-stone-50 p-8 rounded-2xl shadow-lg border border-stone-100 flex-grow flex flex-col">
               
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-stone-800 mb-6" style={{ fontFamily: 'Montserrat' }}>Sua Reserva</h3>
+                {/* Preço em destaque na box */}
+                <div className="mb-8 pb-6 border-b border-stone-200">
+                  <h3 className="text-stone-400 text-xs font-bold uppercase tracking-widest mb-2" style={{ fontFamily: 'Montserrat' }}>Valor da Diária</h3>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-4xl font-black text-emerald-600">R$ {accommodation.price.toFixed(2).replace('.', ',')}</span>
+                    <span className="text-stone-500 font-medium">/noite</span>
+                  </div>
+                </div>
+
+                <h4 className="text-lg font-bold text-stone-800 mb-6" style={{ fontFamily: 'Montserrat' }}>Sua Reserva</h4>
+                
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="space-y-1">
                     <label htmlFor="checkin" className="block text-xs font-bold uppercase text-stone-500 tracking-wider">Check-in</label>
@@ -195,12 +206,15 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ accommodation
 
                 {numberOfNights > 0 && (
                   <div className="bg-emerald-50 border border-emerald-100 text-emerald-800 p-5 rounded-2xl animate-fade-in mt-6">
-                    <p className="font-bold flex justify-between items-center">
+                    <p className="font-bold flex justify-between items-center text-sm">
                       <span>Período Selecionado:</span>
                       <span className="text-emerald-600 bg-white px-3 py-1 rounded-full text-xs shadow-sm">{numberOfNights} {numberOfNights > 1 ? 'noites' : 'noite'}</span>
                     </p>
                     <div className="mt-3 flex justify-between items-end border-t border-emerald-100 pt-3">
-                      <span className="text-sm opacity-80">Total estimado</span>
+                      <div className="flex flex-col">
+                        <span className="text-xs opacity-70">R$ {accommodation.price} x {numberOfNights} noites</span>
+                        <span className="text-sm opacity-80 font-bold">Total estimado</span>
+                      </div>
                       <span className="text-2xl font-black">R$ {totalPrice.toFixed(2).replace('.', ',')}</span>
                     </div>
                   </div>
