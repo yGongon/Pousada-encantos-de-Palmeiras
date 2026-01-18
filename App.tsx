@@ -19,14 +19,30 @@ function App() {
   const [activePage, setActivePage] = useState<Page>('home');
   const [selectedAccommodationSlug, setSelectedAccommodationSlug] = useState<string | null>(null);
 
+  // Dynamic Page Titles for SEO
+  useEffect(() => {
+    const titles: Record<string, string> = {
+      home: 'Home | Pousada Encantos de Palmeiras',
+      sobre: 'Nossa História | Pousada Encantos de Palmeiras',
+      acomodacoes: 'Acomodações e Preços | Pousada Encantos de Palmeiras',
+      galeria: 'Galeria de Fotos | Pousada Encantos de Palmeiras',
+      contato: 'Contato e Reservas | Pousada Encantos de Palmeiras',
+    };
+
+    if (activePage === 'accommodation-detail' && selectedAccommodationSlug) {
+      const acc = accommodations.find(a => a.slug === selectedAccommodationSlug);
+      document.title = `${acc?.name || 'Acomodação'} | Pousada Encantos de Palmeiras`;
+    } else {
+      document.title = titles[activePage] || 'Pousada Encantos de Palmeiras';
+    }
+  }, [activePage, selectedAccommodationSlug]);
 
   useEffect(() => {
-    // Simulate a loading delay for a better user experience
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // 1.5 seconds
+    }, 1200);
 
-    return () => clearTimeout(timer); // Cleanup timer on component unmount
+    return () => clearTimeout(timer);
   }, []);
 
   const navigateTo = (page: Page, slug: string | null = null) => {
@@ -58,11 +74,9 @@ function App() {
         if (accommodation) {
           return <AccommodationDetail accommodation={accommodation} navigateTo={navigateTo} />;
         }
-        // Fallback to the main accommodations page if slug is not found
         return <Accommodations featuredOnly={false} navigateTo={navigateTo} />;
       }
       default:
-        // Fallback to 'home' view
         return (
             <>
               <Home />
@@ -76,9 +90,9 @@ function App() {
   return (
     <>
       {isLoading && <Loader />}
-      <div className={`bg-[#F8F5F2] text-stone-700 transition-opacity duration-700 ease-in ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`bg-[#F8F5F2] text-stone-700 min-h-screen transition-opacity duration-700 ease-in ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
         <Header activePage={activePage} navigateTo={navigateTo} />
-        <main>
+        <main id="main-content">
           {renderContent()}
         </main>
         <Footer />

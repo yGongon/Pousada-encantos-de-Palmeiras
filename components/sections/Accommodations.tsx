@@ -6,30 +6,44 @@ import { accommodations, Accommodation } from '../data/accommodations';
 
 const AccommodationCard: React.FC<{ accommodation: Accommodation; onDetailsClick: (slug: string) => void; }> = ({ accommodation, onDetailsClick }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
-      <img src={accommodation.images[0]} alt={`Foto da ${accommodation.name}`} className="w-full h-56 object-cover" />
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold text-stone-800 mb-2" style={{ fontFamily: 'Montserrat' }}>{accommodation.name}</h3>
-        <p className="text-stone-600 mb-4 flex-grow">{accommodation.description}</p>
-        <div className="mb-6">
-          <ul className="space-y-2 text-stone-600 mt-2 text-sm">
-            {accommodation.amenities.slice(0, 2).map((item) => (
+    <article className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transform hover:-translate-y-2 transition-all duration-500 border border-stone-100 h-full">
+      <div className="relative h-64 md:h-80 overflow-hidden">
+        <img 
+          src={accommodation.images[0]} 
+          alt={`Suíte ${accommodation.name} - Hospedagem em Palmeiras Chapada Diamantina`} 
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
+          loading="lazy"
+        />
+        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-1 rounded-full text-stone-800 font-bold text-sm shadow-md">
+          A partir de R${accommodation.price}/noite
+        </div>
+      </div>
+      <div className="p-8 flex flex-col flex-grow">
+        <header>
+          <h3 className="text-3xl font-bold text-stone-800 mb-3" style={{ fontFamily: 'Montserrat' }}>{accommodation.name}</h3>
+        </header>
+        <p className="text-stone-600 mb-6 flex-grow leading-relaxed line-clamp-3">
+          {accommodation.description}
+        </p>
+        <div className="mb-8">
+          <h4 className="text-xs font-bold uppercase text-stone-400 tracking-widest mb-4">Comodidades principais:</h4>
+          <ul className="grid grid-cols-2 gap-2 text-stone-600 text-sm font-medium">
+            {accommodation.amenities.slice(0, 4).map((item) => (
               <li key={item} className="flex items-center"><CheckIcon />{item}</li>
             ))}
-             <li className="text-stone-500">e mais...</li>
           </ul>
         </div>
-        <div className="border-t border-stone-200 pt-4 mt-auto">
-          <div className="flex justify-between items-center mb-4">
-             <p className="text-stone-500 text-sm">A partir de</p>
-             <p><span className="text-3xl font-bold text-emerald-600">R${accommodation.price.toFixed(2).replace('.', ',')}</span><span className="text-stone-500">/noite</span></p>
-          </div>
-          <button onClick={() => onDetailsClick(accommodation.slug)} className="inline-block w-full text-center bg-amber-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-amber-600 transition-colors duration-300">
-            Ver detalhes
+        <div className="pt-6 border-t border-stone-100 mt-auto">
+          <button 
+            onClick={() => onDetailsClick(accommodation.slug)} 
+            className="inline-block w-full text-center bg-amber-500 text-white font-bold py-4 px-6 rounded-xl hover:bg-amber-600 transition-all duration-300 shadow-lg shadow-amber-100 active:scale-95"
+            aria-label={`Ver mais detalhes sobre o ${accommodation.name}`}
+          >
+            Ver Detalhes
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -44,30 +58,31 @@ const Accommodations: React.FC<AccommodationsProps> = ({ featuredOnly, navigateT
     : accommodations;
 
   return (
-    <section id="acomodacoes" className="py-20 bg-[#F8F5F2]">
+    <section id="acomodacoes" className="py-24 bg-[#F8F5F2]">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-stone-800" style={{ fontFamily: 'Montserrat' }}>
-            {featuredOnly ? "Nossos Quartos Mais Buscados" : "Nossas Acomodações"}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4" style={{ fontFamily: 'Montserrat' }}>
+            {featuredOnly ? "Hospedagens em Destaque" : "Nossas Acomodações em Palmeiras"}
           </h2>
-          <p className="text-stone-600 mt-4 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-amber-500 mx-auto mb-6 rounded-full"></div>
+          <p className="text-stone-600 max-w-2xl mx-auto text-lg leading-relaxed">
             {featuredOnly 
-              ? "Espaços pensados para seu máximo conforto e conexão com a natureza." 
-              : "Conforto e charme para todos os gostos. Escolha o seu refúgio ideal."}
+              ? "Confira os quartos preferidos dos nossos hóspedes para relaxar na Chapada Diamantina." 
+              : "Suítes confortáveis, equipadas com o essencial para seu descanso após um dia de trilhas e cachoeiras."}
           </p>
         </div>
-        <div className={`grid grid-cols-1 md:grid-cols-2 ${featuredOnly ? '' : 'lg:grid-cols-2'} gap-8`}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
           {accommodationsToDisplay.map((acc) => (
-            <AccommodationCard key={acc.name} accommodation={acc} onDetailsClick={(slug) => navigateTo('accommodation-detail', slug)} />
+            <AccommodationCard key={acc.slug} accommodation={acc} onDetailsClick={(slug) => navigateTo('accommodation-detail', slug)} />
           ))}
         </div>
-        {featuredOnly && navigateTo && (
-            <div className="text-center mt-12">
+        {featuredOnly && (
+            <div className="text-center mt-16">
                 <button
                     onClick={() => navigateTo('acomodacoes')}
-                    className="bg-stone-800 text-white font-bold py-3 px-8 rounded-lg hover:bg-stone-900 transition-all duration-300 ease-in-out transform hover:scale-105"
+                    className="bg-stone-800 text-white font-bold py-4 px-12 rounded-xl hover:bg-stone-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-xl"
                 >
-                    Ver todas as acomodações
+                    Conhecer Todos os Quartos
                 </button>
             </div>
         )}
