@@ -1,7 +1,11 @@
-
 import React from 'react';
+import type { Page } from '../../App';
 
-const Home: React.FC = () => {
+interface HomeProps {
+  navigateTo: (page: Page) => void;
+}
+
+const Home: React.FC<HomeProps> = ({ navigateTo }) => {
   const whatsappUrl = "https://wa.me/5575991973368?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva.";
 
   return (
@@ -11,7 +15,6 @@ const Home: React.FC = () => {
         src="https://i.ibb.co/4RNKd4gF/IMG-2397.jpg" 
         alt="Fachada iluminada da Pousada Encantos de Palmeiras na Chapada Diamantina" 
         className="absolute inset-0 w-full h-full object-cover" 
-        // Fix: Use camelCase for fetchPriority as suggested by the TypeScript error
         fetchPriority="high"
         loading="eager"
       />
@@ -31,12 +34,12 @@ const Home: React.FC = () => {
           >
             Reservar Agora
           </a>
-          <a 
-            href="#acomodacoes" 
-            className="bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-white/20 transition-all duration-300"
+          <button 
+            onClick={() => navigateTo('acomodacoes')} 
+            className="bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-white/20 transition-all duration-300 cursor-pointer"
           >
             Ver Quartos
-          </a>
+          </button>
         </div>
       </div>
       

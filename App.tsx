@@ -56,7 +56,7 @@ function App() {
       case 'home':
         return (
           <>
-            <Home />
+            <Home navigateTo={navigateTo} />
             <Accommodations featuredOnly={true} navigateTo={navigateTo} />
             <Location />
           </>
@@ -79,7 +79,7 @@ function App() {
       default:
         return (
             <>
-              <Home />
+              <Home navigateTo={navigateTo} />
               <Accommodations featuredOnly={true} navigateTo={navigateTo} />
               <Location />
             </>
