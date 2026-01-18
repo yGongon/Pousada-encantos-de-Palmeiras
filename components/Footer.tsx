@@ -1,7 +1,12 @@
 import React from 'react';
 import { FacebookIcon, InstagramIcon, TwitterIcon } from './icons/Icons';
+import type { Page } from '../App';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  navigateTo: (page: Page) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -24,13 +29,19 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Montserrat' }}>Siga-nos</h3>
             <div className="flex justify-center md:justify-start space-x-4">
               <a href="#" className="text-stone-300 hover:text-amber-400 transition-colors"><FacebookIcon /></a>
-              <a href="#" className="text-stone-300 hover:text-amber-400 transition-colors"><InstagramIcon /></a>
+              <a href="https://www.instagram.com/pousadaencantosdepalmeiras/" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-amber-400 transition-colors"><InstagramIcon /></a>
               <a href="#" className="text-stone-300 hover:text-amber-400 transition-colors"><TwitterIcon /></a>
             </div>
           </div>
         </div>
-        <div className="border-t border-stone-700 mt-8 pt-6 text-center text-stone-400 text-sm">
+        <div className="border-t border-stone-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-stone-400 text-sm gap-4">
           <p>&copy; {currentYear} Pousada Encantos de Palmeiras. Todos os direitos reservados.</p>
+          <button 
+            onClick={() => navigateTo('privacidade')}
+            className="hover:text-white transition-colors underline decoration-stone-600 underline-offset-4"
+          >
+            Políticas de Privacidade
+          </button>
         </div>
       </div>
     </footer>

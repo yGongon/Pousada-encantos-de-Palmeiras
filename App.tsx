@@ -10,9 +10,10 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import Loader from './components/Loader';
 import AccommodationDetail from './components/pages/AccommodationDetail';
+import PrivacyPolicy from './components/pages/PrivacyPolicy';
 import { accommodations } from './components/data/accommodations';
 
-export type Page = 'home' | 'sobre' | 'acomodacoes' | 'galeria' | 'contato' | 'accommodation-detail';
+export type Page = 'home' | 'sobre' | 'acomodacoes' | 'galeria' | 'contato' | 'accommodation-detail' | 'privacidade';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +28,7 @@ function App() {
       acomodacoes: 'Acomodações e Preços | Pousada Encantos de Palmeiras',
       galeria: 'Galeria de Fotos | Pousada Encantos de Palmeiras',
       contato: 'Contato e Reservas | Pousada Encantos de Palmeiras',
+      privacidade: 'Políticas de Privacidade | Pousada Encantos de Palmeiras',
     };
 
     if (activePage === 'accommodation-detail' && selectedAccommodationSlug) {
@@ -69,6 +71,8 @@ function App() {
         return <Gallery />;
       case 'contato':
         return <Contact />;
+      case 'privacidade':
+        return <PrivacyPolicy navigateTo={navigateTo} />;
       case 'accommodation-detail': {
         const accommodation = accommodations.find(a => a.slug === selectedAccommodationSlug);
         if (accommodation) {
@@ -95,7 +99,7 @@ function App() {
         <main id="main-content">
           {renderContent()}
         </main>
-        <Footer />
+        <Footer navigateTo={navigateTo} />
         <WhatsAppButton />
       </div>
     </>
