@@ -7,11 +7,16 @@
     
     <!-- SEO Master -->
     <title>Pousada Encantos de Palmeiras | O melhor custo-benefício na Chapada Diamantina</title>
-    <meta name="description" content="Hospede-se no coração da Chapada Diamantina. A Pousada Encantos de Palmeiras oferece conforto, Wi-Fi gratuito e localização privilegiada no centro de Palmeiras, BA. Reserve agora!">
-    <meta name="keywords" content="Pousada Chapada Diamantina, Hospedagem Palmeiras BA, Hotel em Palmeiras Bahia, Onde ficar na Chapada Diamantina, Pousada barata Chapada Diamantina, Vale do Capão, Pai Inácio">
+    <meta name="description" content="Hospede-se no coração da Chapada Diamantina. A Pousada Encantos de Palmeiras oferece conforto, Wi-Fi gratuito e localização privilegiada no centro de Palmeiras, BA. Reserve agora com o melhor preço!">
+    <meta name="keywords" content="Pousada Chapada Diamantina, Hospedagem Palmeiras BA, Hotel em Palmeiras Bahia, Onde ficar na Chapada Diamantina, Pousada barata Chapada Diamantina, Vale do Capão, Pai Inácio, Morro do Pai Inácio">
     <link rel="canonical" href="https://pousadaencantosdepalmeiras.com.br" />
     <meta name="author" content="Pousada Encantos de Palmeiras">
     <meta name="robots" content="index, follow">
+
+    <!-- Preload LCP Image & Fonts -->
+    <link rel="preload" as="image" href="https://i.ibb.co/4RNKd4gF/IMG-2397.jpg" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
@@ -19,6 +24,8 @@
     <meta property="og:title" content="Pousada Encantos de Palmeiras | Conforto na Chapada Diamantina">
     <meta property="og:description" content="Seu refúgio de paz no centro de Palmeiras. Quartos confortáveis e o melhor ponto de partida para as trilhas da Chapada.">
     <meta property="og:image" content="https://i.ibb.co/4RNKd4gF/IMG-2397.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Pousada Encantos de Palmeiras">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -37,7 +44,7 @@
       "@id": "https://pousadaencantosdepalmeiras.com.br",
       "url": "https://pousadaencantosdepalmeiras.com.br",
       "telephone": "+5575991973368",
-      "priceRange": "$$",
+      "priceRange": "R$300 - R$350",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Centro",
@@ -51,6 +58,23 @@
         "latitude": -12.5150866,
         "longitude": -41.5741065
       },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "sameAs": [
+        "https://www.instagram.com/pousadaencantosdepalmeiras/"
+      ],
       "amenityFeature": [
         { "@type": "LocationFeatureSpecification", "name": "Wi-Fi Gratuito", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Ar Condicionado", "value": true },
@@ -60,8 +84,6 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -71,13 +93,17 @@
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
       }
-      h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+      h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-display: swap; }
       
       /* Otimização de renderização para seções longas */
-      section { content-visibility: auto; contain-intrinsic-size: 0 500px; }
+      section { content-visibility: auto; contain-intrinsic-size: 1px 500px; }
       #home { content-visibility: visible; }
       
       .shadow-text { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+
+      /* Aspect Ratio Utility para prevenir CLS */
+      .aspect-video { aspect-ratio: 16 / 9; }
+      .aspect-square { aspect-ratio: 1 / 1; }
     </style>
 
     <script type="importmap">

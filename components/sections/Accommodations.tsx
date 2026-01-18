@@ -7,15 +7,18 @@ import { accommodations, Accommodation } from '../data/accommodations';
 const AccommodationCard: React.FC<{ accommodation: Accommodation; onDetailsClick: (slug: string) => void; }> = ({ accommodation, onDetailsClick }) => {
   return (
     <article className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col transform hover:-translate-y-2 transition-all duration-500 border border-stone-100 h-full">
-      <div className="relative h-64 md:h-80 overflow-hidden">
+      <div className="relative aspect-video overflow-hidden bg-stone-100">
         <img 
           src={accommodation.images[0]} 
-          alt={`Suíte ${accommodation.name} - Hospedagem em Palmeiras Chapada Diamantina`} 
+          alt={`Suíte ${accommodation.name} na Pousada Encantos de Palmeiras - Chapada Diamantina`} 
           className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
           loading="lazy"
+          width="800"
+          height="450"
         />
-        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-1 rounded-full text-stone-800 font-bold text-sm shadow-md">
-          A partir de R${accommodation.price}/noite
+        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-2xl text-stone-800 font-bold text-sm shadow-md flex flex-col items-end">
+          <span className="text-[10px] text-emerald-600 font-black uppercase tracking-wider leading-none mb-1">-6% NO PIX</span>
+          <span>A partir de R${accommodation.price.toFixed(2).replace('.', ',')}/noite</span>
         </div>
       </div>
       <div className="p-8 flex flex-col flex-grow">
@@ -37,7 +40,8 @@ const AccommodationCard: React.FC<{ accommodation: Accommodation; onDetailsClick
           <button 
             onClick={() => onDetailsClick(accommodation.slug)} 
             className="inline-block w-full text-center bg-amber-500 text-white font-bold py-4 px-6 rounded-xl hover:bg-amber-600 transition-all duration-300 shadow-lg shadow-amber-100 active:scale-95"
-            aria-label={`Ver mais detalhes sobre o ${accommodation.name}`}
+            aria-label={`Ver mais detalhes e fotos do ${accommodation.name}`}
+            title={`Clique para ver detalhes do ${accommodation.name}`}
           >
             Ver Detalhes
           </button>
@@ -81,6 +85,7 @@ const Accommodations: React.FC<AccommodationsProps> = ({ featuredOnly, navigateT
                 <button
                     onClick={() => navigateTo('acomodacoes')}
                     className="bg-stone-800 text-white font-bold py-4 px-12 rounded-xl hover:bg-stone-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-xl"
+                    aria-label="Ver todas as acomodações disponíveis"
                 >
                     Conhecer Todos os Quartos
                 </button>

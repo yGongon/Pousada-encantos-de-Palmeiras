@@ -45,23 +45,25 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ accommodation
     return checkInDate.toISOString().split('T')[0];
   }, [checkIn]);
 
-  const { numberOfNights, totalPrice } = useMemo(() => {
+  const { numberOfNights, totalPrice, pixTotal } = useMemo(() => {
     if (!checkIn || !checkOut) {
-      return { numberOfNights: 0, totalPrice: 0 };
+      return { numberOfNights: 0, totalPrice: 0, pixTotal: 0 };
     }
     const startDate = new Date(checkIn + 'T00:00:00Z');
     const endDate = new Date(checkOut + 'T00:00:00Z');
     
     if (endDate <= startDate) {
-      return { numberOfNights: 0, totalPrice: 0 };
+      return { numberOfNights: 0, totalPrice: 0, pixTotal: 0 };
     }
     
     const diffTime = endDate.getTime() - startDate.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    const baseTotal = diffDays * accommodation.price;
     
     return {
       numberOfNights: diffDays,
-      totalPrice: diffDays * accommodation.price,
+      totalPrice: baseTotal,
+      pixTotal: baseTotal * 0.94, // 6% discount
     };
   }, [checkIn, checkOut, accommodation.price]);
 
@@ -169,6 +171,19 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ accommodation
                     <span className="text-4xl font-black text-emerald-600">R$ {accommodation.price.toFixed(2).replace('.', ',')}</span>
                     <span className="text-stone-500 font-medium">/noite</span>
                   </div>
+                  {/* Nota sobre PIX */}
+                  <div className="mt-2 flex items-center gap-2">
+                    <span className="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-tighter">Bônus PIX</span>
+                    <span className="text-emerald-600 text-sm font-bold">6% de desconto no pagamento via PIX</span>
+                  </div>
+                  {/* Observação de cama extra no box de reserva */}
+                  {accommodation.observation && (
+                    <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-100">
+                      <p className="text-amber-800 text-xs font-bold leading-tight">
+                        📌 {accommodation.observation}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 <h4 className="text-lg font-bold text-stone-800 mb-6" style={{ fontFamily: 'Montserrat' }}>Sua Reserva</h4>
@@ -205,17 +220,24 @@ const AccommodationDetail: React.FC<AccommodationDetailProps> = ({ accommodation
                 </div>
 
                 {numberOfNights > 0 && (
-                  <div className="bg-emerald-50 border border-emerald-100 text-emerald-800 p-5 rounded-2xl animate-fade-in mt-6">
+                  <div className="bg-emerald-50 border border-emerald-100 text-emerald-800 p-5 rounded-2xl animate-fade-in mt-6 space-y-3">
                     <p className="font-bold flex justify-between items-center text-sm">
                       <span>Período Selecionado:</span>
                       <span className="text-emerald-600 bg-white px-3 py-1 rounded-full text-xs shadow-sm">{numberOfNights} {numberOfNights > 1 ? 'noites' : 'noite'}</span>
                     </p>
-                    <div className="mt-3 flex justify-between items-end border-t border-emerald-100 pt-3">
+                    
+                    <div className="flex justify-between items-end pt-3 border-t border-emerald-100">
                       <div className="flex flex-col">
-                        <span className="text-xs opacity-70">R$ {accommodation.price} x {numberOfNights} noites</span>
-                        <span className="text-sm opacity-80 font-bold">Total estimado</span>
+                        <span className="text-xs opacity-70">Total (Cartão/Outros)</span>
                       </div>
-                      <span className="text-2xl font-black">R$ {totalPrice.toFixed(2).replace('.', ',')}</span>
+                      <span className="text-lg font-bold opacity-80">R$ {totalPrice.toFixed(2).replace('.', ',')}</span>
+                    </div>
+
+                    <div className="flex justify-between items-end pt-1">
+                      <div className="flex flex-col">
+                        <span className="text-xs font-bold text-emerald-600">Total no PIX (-6%)</span>
+                      </div>
+                      <span className="text-2xl font-black text-emerald-700">R$ {pixTotal.toFixed(2).replace('.', ',')}</span>
                     </div>
                   </div>
                 )}
