@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ navigateTo }) => {
           <div>
             <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Montserrat' }}>Contato</h3>
             <ul className="space-y-2 text-stone-300">
-              <li><a href="mailto:contato@encantosdepalmeiras.com.br" className="hover:text-amber-400">contato@encantosdepalmeiras.com.br</a></li>
+              <li><a href="mailto:pousadaencantosdepalmeiras@gmail.com" className="hover:text-amber-400">pousadaencantosdepalmeiras@gmail.com</a></li>
               <li><a href="tel:+5575991973368" className="hover:text-amber-400">+55 (75) 99197-3368</a></li>
               <li>Palmeiras, Chapada Diamantina, Bahia, Brasil</li>
             </ul>

@@ -31,11 +31,11 @@ const universalAmenities = [
 
 export const accommodations: Accommodation[] = [
   {
-    name: 'Quarto 1 - Duplo',
+    name: 'Suíte Master 1 - Duplo',
     slug: 'quarto-1',
     description: 'Espaço acolhedor e bem decorado.',
     observation: 'Possibilidade de acrescentar cama extra.',
-    details: 'O Quarto 1 é um refúgio de paz, planejado para oferecer o máximo de conforto com um toque de rusticidade elegante.',
+    details: 'A Suíte Master 1 é um refúgio de paz, planejado para oferecer o máximo de conforto com um toque de rusticidade elegante.',
     fullDetails: [
       'Ambiente cuidadosamente higienizado e decorado com detalhes em madeira.',
       'Configuração flexível com possibilidade de inclusão de cama extra sob consulta.',
@@ -52,11 +52,11 @@ export const accommodations: Accommodation[] = [
     featured: true,
   },
   {
-    name: 'Quarto 2 - Triplo',
+    name: 'Suíte Master 2 - Triplo',
     slug: 'quarto-2',
     description: 'Suíte charmosa com excelente iluminação.',
     observation: 'Possibilidade de acrescentar cama extra.',
-    details: 'O Quarto 2 destaca-se pelo seu amplo espaço e conforto térmico, ideal para descanso profundo.',
+    details: 'A Suíte Master 2 destaca-se pelo seu amplo espaço e conforto térmico, ideal para descanso profundo.',
     fullDetails: [
       'Equipado com enxoval de alta qualidade para noites relaxantes.',
       'Amplo espaço interno permitindo a adição de uma cama extra confortavelmente.',
@@ -75,7 +75,7 @@ export const accommodations: Accommodation[] = [
     featured: true,
   },
   {
-    name: 'Quarto 6 - Duplo',
+    name: 'Suíte Master 6 - Duplo',
     slug: 'quarto-6',
     description: 'Ambiente rústico sofisticado.',
     observation: 'Possibilidade de acrescentar cama extra.',
@@ -98,7 +98,7 @@ export const accommodations: Accommodation[] = [
     featured: true,
   },
   {
-    name: 'Quarto 9 - Duplo',
+    name: 'Suíte Conforto 9 - Duplo',
     slug: 'quarto-9',
     description: 'Simplicidade e conforto.',
     observation: 'Possibilidade de acrescentar cama extra.',
@@ -117,10 +117,10 @@ export const accommodations: Accommodation[] = [
     price: 300,
   },
   {
-    name: 'Quarto 10 - Duplo',
+    name: 'Suíte Conforto 10 - Duplo',
     slug: 'quarto-10',
     description: 'Compacto e funcional, excelente custo-benefício para viajantes solo ou casais práticos.',
-    details: 'Um quarto direto ao ponto: conforto, limpeza e boa noite de sono garantida.',
+    details: 'Uma suíte direto ao ponto: conforto, limpeza e boa noite de sono garantida.',
     fullDetails: [
       'Ótima ventilação e iluminação.',
       'Localizado próximo à área de café da manhã para sua conveniência.'
@@ -134,10 +134,10 @@ export const accommodations: Accommodation[] = [
     price: 300,
   },
   {
-    name: 'Quarto 11 - Triplo',
+    name: 'Suíte Conforto 11 - Triplo',
     slug: 'quarto-11',
     description: 'Acomodação prática para quem valoriza a boa localização e conforto essencial.',
-    details: 'O Quarto 11 oferece um ambiente clean e arejado, ideal para seu descanso.',
+    details: 'A Suíte Conforto 11 oferece um ambiente clean e arejado, ideal para seu descanso.',
     fullDetails: ['Ambiente renovado e bem iluminado.', 'Proximidade com as áreas comuns da pousada.'],
     amenities: universalAmenities,
     images: [
@@ -148,7 +148,7 @@ export const accommodations: Accommodation[] = [
     price: 300,
   },
   {
-    name: 'Quarto 12 - Duplo',
+    name: 'Suíte Conforto 12 - Duplo',
     slug: 'quarto-12',
     description: 'Suíte versátil, perfeita para acomodar com conforto casais ou amigos.',
     details: 'Configurações de camas flexíveis para sua necessidade em um ambiente espaçoso.',
@@ -163,7 +163,7 @@ export const accommodations: Accommodation[] = [
     price: 300,
   },
   {
-    name: 'Quarto 13 - Duplo',
+    name: 'Suíte Conforto 13 - Duplo',
     slug: 'quarto-13',
     description: 'Um refúgio tranquilo com decoração minimalista e acolhedora.',
     details: 'Decoração rústica que favorece o descanso mental e físico.',
@@ -178,7 +178,7 @@ export const accommodations: Accommodation[] = [
     price: 300,
   },
   {
-    name: 'Quarto 14 - Duplo Twin',
+    name: 'Suíte Conforto 14 - Duplo Twin',
     slug: 'quarto-14',
     description: 'Conforto e praticidade com duas camas de solteiro em ambiente arejado.',
     details: 'Ideal para amigos ou familiares que buscam uma estadia confortável com camas individuais.',
@@ -196,7 +196,7 @@ export const accommodations: Accommodation[] = [
     price: 300,
   },
   {
-    name: 'Quarto 15 - Duplo',
+    name: 'Suíte Conforto 15 - Duplo',
     slug: 'quarto-15',
     description: 'Suíte charmosa perfeita para casais que buscam tranquilidade.',
     details: 'Ambiente planejado para oferecer privacidade e bem-estar durante sua visita à Chapada.',
@@ -215,10 +215,10 @@ export const accommodations: Accommodation[] = [
     price: 300,
   },
   {
-    name: 'Quarto 16 - Triplo',
+    name: 'Suíte Conforto 16 - Triplo',
     slug: 'quarto-16',
     description: 'Suíte ampla com varanda e vista relaxante, perfeita para estadias prolongadas.',
-    details: 'O Quarto 16 oferece mais espaço e uma sensação de liberdade única na pousada.',
+    details: 'A Suíte Conforto 16 oferece mais espaço e uma sensação de liberdade única na pousada.',
     fullDetails: [
       'Área externa privativa para curtir o final de tarde.',
       'Mobiliário pensado para o máximo aproveitamento do espaço.'
@@ -235,7 +235,7 @@ export const accommodations: Accommodation[] = [
     featured: true,
   },
   {
-    name: 'Quarto 17 - Triplo',
+    name: 'Suíte Conforto 17 - Triplo',
     slug: 'quarto-17',
     description: 'Conforto moderno com toque rústico, ideal para casais ou pequenos grupos.',
     details: 'Perfeito para quem não abre mão de tecnologia e bem-estar.',
@@ -249,7 +249,7 @@ export const accommodations: Accommodation[] = [
     price: 300,
   },
   {
-    name: 'Quarto 18 - Duplo Twin',
+    name: 'Suíte Conforto 18 - Duplo Twin',
     slug: 'quarto-18',
     description: 'Nossa suíte master com camas separadas (twin) e muito espaço.',
     details: 'O topo do conforto na Encantos de Palmeiras com configuração de camas twin.',

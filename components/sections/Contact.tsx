@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
             <div className="space-y-4 mb-8 flex-grow">
               <div className="flex flex-col">
                 <span className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-1">E-mail</span>
-                <a href="mailto:contato@encantosdepalmeiras.com.br" className="text-stone-700 font-medium hover:text-amber-600 transition-colors">contato@encantosdepalmeiras.com.br</a>
+                <a href="mailto:pousadaencantosdepalmeiras@gmail.com" className="text-stone-700 font-medium hover:text-amber-600 transition-colors break-words">pousadaencantosdepalmeiras@gmail.com</a>
               </div>
               <div className="flex flex-col">
                 <span className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-1">Telefone</span>

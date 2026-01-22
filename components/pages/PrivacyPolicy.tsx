@@ -70,7 +70,7 @@ const PrivacyPolicy: React.FC<PrivacyPolicyProps> = ({ navigateTo }) => {
           <section>
             <h2 className="text-2xl font-bold text-stone-800 mb-4" style={{ fontFamily: 'Montserrat' }}>5. Seus Direitos</h2>
             <p>
-              De acordo com a LGPD, você tem o direito de solicitar o acesso, a correção ou a exclusão definitiva de seus dados pessoais de nossa base de dados. Para exercer esses direitos, entre em contato conosco através do e-mail <strong>contato@encantosdepalmeiras.com.br</strong>.
+              De acordo com a LGPD, você tem o direito de solicitar o acesso, a correção ou a exclusão definitiva de seus dados pessoais de nossa base de dados. Para exercer esses direitos, entre em contato conosco através do e-mail <strong>pousadaencantosdepalmeiras@gmail.com</strong>.
             </p>
           </section>
 
